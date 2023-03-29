@@ -45,8 +45,19 @@ final class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        
     }
+    
 
+    // MARK: - Prepare
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let uiResultVC = segue.destination as? ResultViewController  else {
+            return
+        }
+        uiResultVC.sumAnswers = answerChosen
+    }
+    
+    
     // MARK: - IBActions
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         guard let currentIndex = singleButtons.firstIndex(of: sender) else { return }
@@ -71,6 +82,7 @@ final class QuestionsViewController: UIViewController {
         let index = lrintf(rangedSlider.value)
         
         answerChosen.append(currentAnswers[index])
+        
         
         nextQuestion()
     }
@@ -146,5 +158,4 @@ extension QuestionsViewController {
         
         performSegue(withIdentifier: "showResult", sender: nil)
     }
-    
 }

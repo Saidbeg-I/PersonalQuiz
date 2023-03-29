@@ -345,6 +345,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backBarButtonItem" destination="B68-DJ-Tgq" id="Av9-s5-Fee"/>
+                        <outlet property="discriptionAnswerLabel" destination="JG7-yQ-jnH" id="nuG-86-dLd"/>
+                        <outlet property="resultAnswerLabel" destination="Cch-pI-emx" id="FI4-M9-5jF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTM-dP-SM6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
